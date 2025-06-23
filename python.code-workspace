@@ -7,6 +7,19 @@
             "path":"."
         }
     ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true,
+            ".venv":true,
+            "logs":true,
+            "**/__pycache__":true,
+            "dist":true
+        }
+    },
     "security.workspace.trust.untrustedFiles": "open",
     "[python]": {
         "editor.formatOnType": true
@@ -28,11 +41,24 @@
             "name": "Python: Current File",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/src/{file}",
+            "program": "${workspaceFolder}/{file}",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "justMyCode": true
-        }],
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Twitter",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false,
+            "args": [
+                "list-models"
+            ]
+        }
+    ],
         "compounds": []
     }
 }
